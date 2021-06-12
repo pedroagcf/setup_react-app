@@ -1,0 +1,3 @@
+node_modules
+.next
+/*.js //para que o eslint nao tente corrigir arquivos de config ".js"

@@ -1,34 +1,70 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+1. create-next-app
+2. yarn add typescript @types/react @types/node -D
+3. config eslint:
+    - yarn add eslint -D
+    - yarn eslint --init -> "checar sintaxe, encontrar problemas e forçar estilo de codigo"
+4. Setting eslint:
+   √ How would you like to use ESLint? · style
+   √ What type of modules does your project use? · esm
+   √ Which framework does your project use? · react
+   √ Does your project use TypeScript? · Yes
+   √ Where does your code run? · browser, node
+   √ How would you like to define a style for your project? · guide
+   √ Which style guide do you want to follow? · standard
+   √ What format do you want your config file to be in? · JSON
+   √ Would you like to install them now with npm? · Yes
+   delete package-lock.json
+   run yarn
 
-## Getting Started
+    check the following JSON in "settings.json":
 
-First, run the development server:
+    "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+    }
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+5. install 'yarn add prettier eslint-plugin-prettier eslint-config-prettier -D'
+6. add the following configs to ".eslintrc.json" file
+   "env": {
+   ...
+   "jest": true
+   },
+   "extends": [
+   ...
+   ...
+   "plugin:@typescript-eslint/recommended",
+   "prettier/@typescript-eslint",
+   "prettier/standart",
+   "prettier/react"
+   ],
+   ...
+   ...
+   ...
+   "plugins": [
+   "@typescript-eslint",
+   "prettier"
+   ],
+   "rules": {
+   "prettier/prettier": "error",
+   "space-before-function-paren": "off",
+   "react/prop-types": "off"
+   }
+7. Criar arquivo prettier.config.js
+8. criar editorconfig
+9. config styled components: TEMPLATE NEXT STYLE COMPONENTS
+10. create babel.config.js
+11. create "\_document.tsx" in pages folder
+12. Run "yarn add @types/styled-components -D"
+13. Don't forget to run: yarn add styled-components and yarn add babel-plugin-styled-components
+14. Create src folder and move pages folder in
+15. create styles folder into src folder
+16. create global.ts file into styles folder in order to setup global styles with styled components
+17. Import global style to "\_app.tsx"
+18. create theme TS file into styles folder and use in \_app.tsx and global.tsx file.
+19. create definitilon file called style.d.ts in styles folder in order to use theme's properties in the global style
+20. Adding plugin "next-images" to import images "yarn add next-images"
+21. create "next.config.js" file
+22. yarn add babel-plugin-inline-react-svg -D and set plugin "inline-react-svg" into babel.config.js file
+23. In order to create a style for each page, a good approach is create a folder called pages into styles folder and define each style in according the page
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+24. TODO: add test library (Jest and Cypress)
+25. TODO: learn SWR library
